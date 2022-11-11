@@ -23,7 +23,6 @@ const options = {
     if (selectedDates[0] < new Date()) {
       Notiflix.Notify.failure('Please choose a date in the future');
       onClickBtnStart.disabled = true;
-      inputDateId = new Date();
     } else {
       onClickBtnStart.disabled = false;
       inputDateId = selectedDates[0];
@@ -68,9 +67,6 @@ function countdownStart() {
       hours.textContent = addLeadingZero(components.hours);
       minutes.textContent = addLeadingZero(components.minutes);
       seconds.textContent = addLeadingZero(components.seconds);
-      if (countdown < 0) {
-        timer.style.color = 'red';
-      }
     } else {
       Notiflix.Notify.success('Countdown finished');
       timer.style.color = 'green';
