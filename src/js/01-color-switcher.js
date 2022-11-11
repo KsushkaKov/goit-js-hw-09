@@ -13,6 +13,7 @@ btnStart.addEventListener('click', onClickBtnStart);
 btnStop.addEventListener('click', onClickBtnStop);
 
 function onClickBtnStart() {
+  body.style.backgroundColor = getRandomHexColor();
   btnStart.disabled = true;
   btnStop.disabled = false;
   timerId = setInterval(() => {
