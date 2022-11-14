@@ -31,8 +31,7 @@ function onFormSubmit(event) {
   let amount = Number(event.currentTarget.amount.value);
 
   for (let position = 1; position <= amount; position += 1) {
-    createPromise(position, (delay += step))
-      .then(onSuccess)
-      .catch(onError);
+    createPromise(position, delay).then(onSuccess).catch(onError);
+    delay += step;
   }
 }
